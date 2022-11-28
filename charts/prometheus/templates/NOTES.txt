@@ -34,5 +34,15 @@ Get the Prometheus server URL by running these commands in the same shell:
 {{- end }}
 {{- end }}
 
+{{- if .Values.nodeExporter.podSecurityPolicy.enabled }}
+{{- else }}
+#################################################################################
+######   WARNING: Pod Security Policy has been moved to a global property.  #####
+######            use .Values.podSecurityPolicy.enabled with pod-based      #####
+######            annotations                                               #####
+######            (e.g. .Values.nodeExporter.podSecurityPolicy.annotations) #####
+#################################################################################
+{{- end }}
+
 For more information on running Prometheus, visit:
 https://prometheus.io/
