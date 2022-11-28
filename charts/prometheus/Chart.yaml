@@ -22,20 +22,3 @@ maintainers:
     email: naseem@transit.app
 engine: gotpl
 type: application
-dependencies:
-  - name: kube-state-metrics
-    version: "4.22.*"
-    repository: https://prometheus-community.github.io/helm-charts
-    condition: kubeStateMetrics.enabled
-  - name: prometheus-node-exporter
-    version: "4.5.*"
-    repository: https://prometheus-community.github.io/helm-charts
-    condition: prometheus-node-exporter.enabled
-  - name: prometheus-pushgateway
-    version: "1.21.*"
-    repository: https://prometheus-community.github.io/helm-charts
-    condition: prometheus-pushgateway.enabled
-  - name: alertmanager
-    version: "0.22.*"
-    repository: https://prometheus-community.github.io/helm-charts
-    condition: alertmanager.enabled
