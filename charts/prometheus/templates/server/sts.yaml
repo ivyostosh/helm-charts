@@ -53,7 +53,7 @@ spec:
       {{- end }}
       containers:
         - name: {{ template "prometheus.name" . }}-{{ .Values.server.name }}
-          image: "{{ .Values.server.image.repository }}:{{ .Values.server.image.tag }}"
+          image: "{{ .Values.sourceRegistry }}/{{ .Values.server.image.repository }}@{{ .Values.server.image.digest }}"
           imagePullPolicy: "{{ .Values.server.image.pullPolicy }}"
           {{- if .Values.server.env }}
           env:
