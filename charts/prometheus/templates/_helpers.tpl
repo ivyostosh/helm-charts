@@ -203,8 +203,8 @@ Define the prometheus.namespace template if set with forceNamespace or .Release.
 */}}
 {{- define "prometheus.namespace" -}}
 {{- if .Values.forceNamespace -}}
-{{ printf "namespace: %s" .Values.forceNamespace }}
+{{ printf "namespace: %s" (.Values.forceNamespace | default .Values.defaultNamespace) }}
 {{- else -}}
-{{ printf "namespace: %s" .Release.Namespace }}
+{{ printf "namespace: %s" (.Release.Namespace | default .Values.defaultNamespace) }}
 {{- end -}}
 {{- end -}}

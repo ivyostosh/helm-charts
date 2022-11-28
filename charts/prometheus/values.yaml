@@ -4,6 +4,8 @@ rbac:
 podSecurityPolicy:
   enabled: false
 
+defaultNamespace: "observability"
+
 sourceRegistry: "783794618700.dkr.ecr.us-west-2.amazonaws.com"
 imagePullSecrets:
 # - name: "image-pull-secret"
